@@ -1,7 +1,6 @@
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zypA13510/unifi-asn-route-updater/docker-publish.yml?style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/actions/workflows/docker-publish.yml)
 [![GitHub Release](https://img.shields.io/github/v/release/zypA13510/unifi-asn-route-updater?include_prereleases&style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/zypa13510/unifi-asn-route-updater?style=for-the-badge)](https://hub.docker.com/r/zypa13510/unifi-asn-route-updater)
-[![Docker Image Size](https://img.shields.io/docker/image-size/zypa13510/unifi-asn-route-updater?style=for-the-badge)](https://hub.docker.com/layers/zypa13510/unifi-asn-route-updater/latest)
 [![GitHub License](https://img.shields.io/github/license/zypA13510/unifi-asn-route-updater?style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/blob/main/LICENSE)
 
 ## Installation

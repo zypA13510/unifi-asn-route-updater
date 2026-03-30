@@ -1,3 +1,9 @@
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zypA13510/unifi-asn-route-updater/docker-publish.yml?style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/actions/workflows/docker-publish.yml)
+[![GitHub Release](https://img.shields.io/github/v/release/zypA13510/unifi-asn-route-updater?include_prereleases&style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/zypa13510/unifi-asn-route-updater?style=for-the-badge)](https://hub.docker.com/r/zypa13510/unifi-asn-route-updater)
+[![Docker Image Size](https://img.shields.io/docker/image-size/zypa13510/unifi-asn-route-updater?style=for-the-badge)](https://hub.docker.com/layers/zypa13510/unifi-asn-route-updater/latest)
+[![GitHub License](https://img.shields.io/github/license/zypA13510/unifi-asn-route-updater?style=for-the-badge)](https://github.com/zypA13510/unifi-asn-route-updater/blob/main/LICENSE)
+
 ## Installation
 
 Download [ui-update-asn-routes.sh](ui-update-asn-routes.sh) and install the following dependencies (make sure they are available in `$PATH`):
@@ -5,19 +11,33 @@ Download [ui-update-asn-routes.sh](ui-update-asn-routes.sh) and install the foll
 - [jq](https://jqlang.org/)
 - [aggregate6](https://github.com/job/aggregate6)
 
-Alternatively, download the Docker image with everything included:
+### Docker
 ```bash
-docker pull ghcr.io/zypa13510/unifi-asn-route-updater:latest
+docker pull zypa13510/unifi-asn-route-updater
 ```
+
+**compose.yaml**:
+```yaml
+services:
+  unifi-asn-route-updater:
+    image: zypa13510/unifi-asn-route-updater:latest
+    environment:
+      ASNLOOKUP_API_TOKEN: 'token'
+      UNIFI_API_TOKEN: 'token'
+      UNIFI_HOST: 192.168.0.1
+      #UNIFI_INSECURE: 1
+      #VERBOSE: 1
+```
+
 
 ## Configuration
 
 The following options can be configured in environment variables:
 | Name | Default value | Note |
 | ---- | ------------- | ---- |
-| `ASNLOOKUP_API_TOKEN` | ✅ (required) | [ASN Lookup](https://asnlookup.com/apidocs/) API key |
-| `UNIFI_API_TOKEN` | ✅ (required) | UniFi Network Application API key. Create one on your UniFi console, under Control Plane &gt; Integrations. **Note**: this is different from the [Site Manager API](https://unifi.ui.com/api) key |
-| `UNIFI_HOST` | `$(ip route show default 0.0.0.0/0)` | Hostname / IP of your UniFi controller |
+| `ASNLOOKUP_API_TOKEN` | ❗ (required) | [ASN Lookup](https://asnlookup.com/apidocs/) API key |
+| `UNIFI_API_TOKEN` | ❗ (required) | UniFi Network Application API key. Create one on your UniFi console, under Control Plane &gt; Integrations. **Note**: this is different from the [Site Manager API](https://unifi.ui.com/api) key |
+| `UNIFI_HOST` |Default gateway as indicated by `ip route show default 0.0.0.0/0` | Hostname / IP of your UniFi controller |
 | `UNIFI_INSECURE` | 0 | Set this to 1 if your UniFi controller uses insecure HTTPS. Runs `curl` with `-k, --insecure` flag |
 | `VERBOSE` | 0 | Set this to 1 to output extra debugging information |
 

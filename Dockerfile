@@ -1,4 +1,4 @@
-FROM python:3.11-bookworm AS build
+FROM python:3.14-trixie AS build
 
 ARG PIPX_HOME=/opt/pipx
 
@@ -11,7 +11,7 @@ RUN set -x \
     && pipx ensurepath \
     && pipx install aggregate6
 
-FROM python:3.11-slim-bookworm AS final
+FROM python:3.14-slim-trixie AS final
 
 RUN set -x \
     && apt-get update \

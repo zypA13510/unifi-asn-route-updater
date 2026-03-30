@@ -6,7 +6,7 @@ RUN set -x \
     && apt-get update \
     && apt-get install  -y --no-install-recommends \
         pipx \
-        python3.11-dev \
+        python3.14-dev \
         build-essential \
     && pipx ensurepath \
     && pipx install aggregate6

@@ -5,7 +5,7 @@
 
 ## Installation
 
-Download [ui-update-asn-routes.sh](ui-update-asn-routes.sh) and install the following dependencies (make sure they are available in `$PATH`):
+Download [ui-update-asn-routes.sh](src/ui-update-asn-routes.sh) and install the following dependencies (make sure they are available in `$PATH`):
 - [curl](https://curl.se/)
 - [jq](https://jqlang.org/)
 - [aggregate6](https://github.com/job/aggregate6)

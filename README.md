@@ -37,7 +37,7 @@ The following options can be configured in environment variables:
 | ---- | ------------- | ---- |
 | `ASNLOOKUP_API_TOKEN` | ❗ (required) | [ASN Lookup](https://asnlookup.com/apidocs/) API key |
 | `UNIFI_API_TOKEN` | ❗ (required) | UniFi Network Application API key. Create one on your UniFi console, under Control Plane &gt; Integrations. **Note**: this is different from the [Site Manager API](https://unifi.ui.com/api) key |
-| `UNIFI_HOST` |Default gateway as indicated by `ip route show default 0.0.0.0/0` | Hostname / IP of your UniFi controller |
+| `UNIFI_HOST` | Default gateway as indicated by `ip route show default 0.0.0.0/0` | Hostname / IP of your UniFi controller |
 | `UNIFI_INSECURE` | 0 | Set this to 1 if your UniFi controller uses insecure HTTPS. Runs `curl` with `-k, --insecure` flag |
 | `VERBOSE` | 0 | Set this to 1 to output extra debugging information |
 
